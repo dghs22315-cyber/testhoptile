@@ -319,7 +319,7 @@ try{
 }catch(e){ Log.err("[vg] disarmed status failed: " + e); }
 
 var dsFx = new Effect(48, function(e){
-    Draw.color(Color.valueOf("ffd6dd"), Color.valueOf("ff3355"), e.fin());
+    Draw.color(Color.white, e.color, e.fin());
     Lines.stroke(3 * e.fout());
     Lines.circle(e.x, e.y, e.rotation * e.finpow());
     Lines.stroke(1.4 * e.fout());
@@ -330,11 +330,15 @@ var dsFx = new Effect(48, function(e){
     Draw.reset();
 });
 var dsT = null, dsFail = false, dsDone = false, dsSeen = {}, dsClean = 0;
+// impact effects per bullet type: r = radius (world units), k = building time scale, d = duration (ticks), c = ring colour
+var DS_RED = Color.valueOf("ff3355"), DS_GREEN = Color.valueOf("9df0a8");
 function dsInit(){
     dsT = new ObjectMap();
     var sup = Vars.content.block("vg-suppressor");
     var mon = Vars.content.block("vg-monolith");
+    var tem = Vars.content.block("vg-tempest");
     var mag = Vars.content.item("vg-magnet");
+    var qm = Vars.content.item("vg-quantum-matrix");
     if(disarmed != null && sup != null && sup.shootType != null){
         sup.shootType.status = disarmed; sup.shootType.statusDuration = 240;
     }
@@ -342,8 +346,13 @@ function dsInit(){
         var bt = mon.ammoTypes.get(mag);
         if(bt != null){
             if(disarmed != null){ bt.status = disarmed; bt.statusDuration = 240; }
-            dsT.put(bt, 72);
+            dsT.put(bt, { r: 72, k: 0.3, d: 300, c: DS_RED });
         }
+    }
+    // Tempest quantum shell: buildings in the blast are frozen for 3 s (units get quantum-stasis from the JSON status)
+    if(tem != null && qm != null){
+        var qt = tem.ammoTypes.get(qm);
+        if(qt != null) dsT.put(qt, { r: 80, k: 0.02, d: 180, c: DS_GREEN });
     }
     dsDone = true;
 }
@@ -354,17 +363,72 @@ Events.run(Trigger.update, function(){
         if(!dsDone) dsInit();
         if(dsT.size == 0) return;
         Groups.bullet.each(function(b){
-            var r = dsT.get(b.type);
-            if(r == null || dsSeen[b.id] !== undefined) return;
+            var cfg = dsT.get(b.type);
+            if(cfg == null || dsSeen[b.id] !== undefined) return;
             if(b.time + Time.delta * 1.5 < b.lifetime) return;
             dsSeen[b.id] = Time.time;
             var x = b.x, y = b.y, tm = b.team;
-            dsFx.at(x, y, r);
+            dsFx.at(x, y, cfg.r, cfg.c);
             if(Vars.net.client()) return;
-            Vars.indexer.eachBlock(null, x, y, r, function(bd){ return bd.team != tm; }, function(bd){
-                try{ bd.applySlowdown(0.3, 300); }catch(e2){}
+            Vars.indexer.eachBlock(null, x, y, cfg.r, function(bd){ return bd.team != tm; }, function(bd){
+                try{ bd.applySlowdown(cfg.k, cfg.d); }catch(e2){}
             });
         });
         if(++dsClean > 600){ dsClean = 0; for(var k in dsSeen){ if(Time.time - dsSeen[k] > 300) delete dsSeen[k]; } }
     }catch(e){ dsFail = true; Log.err("[vg] T4 script disabled: " + e); }
+});
+
+// ---------------- Vanguard Arsenal 2.5 - T5 scripts
+//  * Tempest shells get the ballistic shadow / impact marker / incoming whistle
+//  * Quantum Interceptor: every `reload` ticks destroys the nearest enemy shell within range, including the
+//    non-hittable T2-T4 artillery shells that vanilla point defence ignores. T5+ shells are immune (TZ rule).
+ARTY["vg-tempest"] = { col: Color.valueOf("9df0a8"), whistle: "scorpion-whistle", h: 30 };
+
+var qiFx = new Effect(22, function(e){
+    var d = e.data;
+    if(d == null) return;
+    Draw.color(Color.white, e.color, e.fin());
+    Lines.stroke(2.4 * e.fout());
+    Lines.line(e.x, e.y, d.x, d.y);
+    Lines.stroke(1.2 * e.fout());
+    Lines.circle(d.x, d.y, 4 + 14 * e.finpow());
+    Fill.circle(e.x, e.y, 3 * e.fout());
+    Draw.reset();
+});
+var qiBlock = null, qiImmune = null, qiFail = false, qiTimers = {}, qiTick = 0;
+function qiInit(){
+    qiBlock = Vars.content.block("vg-quantum-interceptor");
+    qiImmune = new ObjectSet();
+    ["vg-tempest"].forEach(function(n){
+        var bl = Vars.content.block(n);
+        if(bl == null || bl.ammoTypes == null) return;
+        bl.ammoTypes.values().toSeq().each(function(bt){
+            qiImmune.add(bt);
+            if(bt.fragBullet != null) qiImmune.add(bt.fragBullet);
+        });
+    });
+}
+Events.on(WorldLoadEvent, function(){ qiTimers = {}; });
+Events.run(Trigger.update, function(){
+    if(qiFail || !Vars.state.isPlaying() || Vars.net.client()) return;
+    try{
+        if(qiBlock == null){ qiInit(); if(qiBlock == null){ qiFail = true; return; } }
+        Groups.build.each(function(bd){
+            if(bd.block != qiBlock) return;
+            var k = bd.pos(), t = (qiTimers[k] || 0) + Time.delta * bd.efficiency;
+            if(t < qiBlock.reload){ qiTimers[k] = t; return; }
+            var best = null, bestD = qiBlock.range * qiBlock.range, tm = bd.team, bx = bd.x, by = bd.y;
+            Groups.bullet.intersect(bx - qiBlock.range, by - qiBlock.range, qiBlock.range * 2, qiBlock.range * 2, function(b){
+                if(b.team == tm || qiImmune.contains(b.type)) return;
+                var d2 = (b.x - bx) * (b.x - bx) + (b.y - by) * (b.y - by);
+                if(d2 < bestD){ bestD = d2; best = b; }
+            });
+            if(best == null){ qiTimers[k] = t; return; }
+            qiTimers[k] = 0;
+            qiFx.at(bx, by, 0, qiBlock.color, new Vec2(best.x, best.y));
+            Fx.absorb.at(best.x, best.y, qiBlock.color);
+            qiBlock.shootSound.at(bx, by, Mathf.random(0.95, 1.05));
+            best.remove();
+        });
+    }catch(e){ qiFail = true; Log.err("[vg] quantum interceptor disabled: " + e); }
 });
