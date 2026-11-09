@@ -7,14 +7,15 @@ ROOT=$PWD
 jar="$PWD/.cache/mindustry/Mindustry.jar"
 [ -s "$jar" ] || curl -fsSL -o "$jar" https://github.com/Anuken/Mindustry/releases/download/v146/Mindustry.jar
 
-version=$(sed -n 's/^version: *"\(.*\)"/\1/p' mod/mod.hjson)
+M=${VG_MOD:-mod}
+version=$(sed -n 's/^version: *"\(.*\)"/\1/p' "$M/mod.hjson")
 B=${VG_BUILD:-build}
 D=${VG_DISPLAY:-:99}
 mkdir -p "$B"
 zip="$B/vanguard-arsenal-$version.zip"
 rm -f "$zip" "$B/vgtest.zip"
-(cd mod && zip -q -r -X "../$zip" .)
-(cd tools/harness && zip -q -r -X "$ROOT/$B/vgtest.zip" .)
+(cd "$M" && zip -q -r -X "$ROOT/$zip" .)
+(cd "${VG_HARNESS:-tools/harness}" && zip -q -r -X "$ROOT/$B/vgtest.zip" .)
 
 data=$PWD/$B/client-data
 rm -rf "$data" "$B/shots" && mkdir -p "$data/Mindustry/mods" "$B/shots"
