@@ -193,7 +193,8 @@
         "smokeRad": 51,
         "smokeSize": 5,
         "smokes": 10
-      }
+      },
+      "damage": 300
     },
     "charge": {
       "type": "ArtilleryBulletType",
@@ -304,7 +305,8 @@
         "smokeRad": 43,
         "smokeSize": 5,
         "smokes": 8
-      }
+      },
+      "damage": 360
     },
     "pyratite": {
       "type": "ArtilleryBulletType",
@@ -417,7 +419,8 @@
         "smokeRad": 54,
         "smokeSize": 5,
         "smokes": 10
-      }
+      },
+      "damage": 200
     },
     "blast-compound": {
       "type": "ArtilleryBulletType",
@@ -541,7 +544,8 @@
         "smokeRad": 62,
         "smokeSize": 5,
         "smokes": 11
-      }
+      },
+      "damage": 420
     },
     "surge-alloy": {
       "type": "ArtilleryBulletType",
@@ -656,7 +660,8 @@
         "smokeRad": 70,
         "smokeSize": 5,
         "smokes": 12
-      }
+      },
+      "damage": 1680
     }
   }
 }
