@@ -1,0 +1,20 @@
+{
+ "type": "CoreBlock",
+ "category": "effect",
+ "size": 4,
+ "health": 4000,
+ "armor": 4,
+ "itemCapacity": 9000,
+ "unitCapModifier": 18,
+ "unitType": "vg-acu-cybran",
+ "research": "core-shard",
+ "ambientSound": "core-hum",
+ "ambientSoundVolume": 0.07,
+ "requirements": [
+  "copper/3000",
+  "lead/2500",
+  "silicon/1500",
+  "graphite/1000",
+  "steel/800"
+ ]
+}

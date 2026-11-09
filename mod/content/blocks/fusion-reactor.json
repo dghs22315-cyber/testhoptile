@@ -1,0 +1,51 @@
+{
+ "type": "ConsumeGenerator",
+ "category": "power",
+ "size": 4,
+ "health": 2600,
+ "research": "vg-plasma-heater",
+ "requirements": [
+  "lead/600",
+  "silicon/500",
+  "graphite/400",
+  "metaglass/200",
+  "titanium/300",
+  "cobalt-alloy/250",
+  "iridium/150",
+  "superconductor/200"
+ ],
+ "powerProduction": 45,
+ "itemDuration": 300,
+ "warmupSpeed": 0.01,
+ "effectChance": 0.04,
+ "generateEffect": "generatespark",
+ "generateEffectRange": 40,
+ "consumes": {
+  "items": {
+   "items": [
+    "tritium-ice/1"
+   ]
+  },
+  "liquid": {
+   "liquid": "liquid-nitrogen",
+   "amount": 0.15
+  }
+ },
+ "ambientSound": "fusion-loop",
+ "ambientSoundVolume": 0.14,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "7fd4ff",
+    "alpha": 0.95,
+    "glowScale": 4,
+    "glowIntensity": 0.4
+   }
+  ]
+ }
+}

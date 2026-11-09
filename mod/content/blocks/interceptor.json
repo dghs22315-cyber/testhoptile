@@ -1,0 +1,23 @@
+{
+ "type": "PointDefenseTurret",
+ "category": "turret",
+ "size": 2,
+ "health": 700,
+ "research": "howl",
+ "requirements": [
+  "copper/60",
+  "lead/50",
+  "silicon/40",
+  "steel/20"
+ ],
+ "range": 176,
+ "reload": 8,
+ "bulletDamage": 28,
+ "shootLength": 6,
+ "rotateSpeed": 18,
+ "color": "8fd0fa",
+ "shootSound": "pd-zap",
+ "consumes": {
+  "power": 1.5
+ }
+}

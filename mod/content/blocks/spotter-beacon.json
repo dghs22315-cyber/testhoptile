@@ -1,0 +1,22 @@
+{
+ "type": "Radar",
+ "category": "effect",
+ "size": 1,
+ "health": 220,
+ "research": "howl",
+ "buildVisibility": "shown",
+ "requirements": [
+  "copper/30",
+  "lead/25",
+  "silicon/15"
+ ],
+ "fogRadius": 25,
+ "discoveryTime": 300,
+ "rotateSpeed": 2,
+ "glowColor": "6ab8ff",
+ "consumes": {
+  "power": 0.3
+ },
+ "ambientSound": "beacon-loop",
+ "ambientSoundVolume": 0.05
+}

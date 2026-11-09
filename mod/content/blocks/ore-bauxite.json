@@ -1,0 +1,5 @@
+{
+ "type": "OreBlock",
+ "itemDrop": "bauxite",
+ "variants": 3
+}

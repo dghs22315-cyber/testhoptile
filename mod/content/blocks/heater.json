@@ -1,0 +1,36 @@
+{
+ "type": "HeatProducer",
+ "category": "crafting",
+ "size": 2,
+ "health": 380,
+ "research": "vg-alloy-furnace",
+ "rotate": true,
+ "requirements": [
+  "copper/60",
+  "lead/50",
+  "graphite/40",
+  "steel/30"
+ ],
+ "heatOutput": 6,
+ "craftTime": 120,
+ "consumes": {
+  "items": {
+   "items": [
+    "charge/1"
+   ]
+  }
+ },
+ "ambientSound": "heater-loop",
+ "ambientSoundVolume": 0.08,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawHeatOutput"
+   }
+  ]
+ }
+}

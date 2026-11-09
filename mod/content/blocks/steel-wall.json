@@ -1,0 +1,10 @@
+{
+ "type": "Wall",
+ "category": "defense",
+ "size": 1,
+ "health": 500,
+ "research": "titanium-wall",
+ "requirements": [
+  "steel/6"
+ ]
+}

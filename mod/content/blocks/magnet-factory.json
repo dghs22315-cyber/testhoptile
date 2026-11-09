@@ -1,0 +1,54 @@
+{
+ "type": "GenericCrafter",
+ "category": "crafting",
+ "size": 2,
+ "health": 420,
+ "research": "vg-electrolyzer",
+ "requirements": [
+  "copper/90",
+  "lead/80",
+  "silicon/70",
+  "aluminum/40"
+ ],
+ "outputItem": "magnet/1",
+ "craftTime": 75,
+ "consumes": {
+  "items": {
+   "items": [
+    "neodymite/2",
+    "silicon/1"
+   ]
+  },
+  "liquid": {
+   "liquid": "chlorine",
+   "amount": 0.08
+  },
+  "power": 1.8
+ },
+ "craftEffect": "pulverizeMedium",
+ "ambientSound": "press-loop",
+ "ambientSoundVolume": 0.08,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawRegion",
+    "suffix": "-bottom"
+   },
+   {
+    "type": "DrawRegion",
+    "suffix": "-spinner",
+    "spinSprite": true,
+    "rotateSpeed": 4
+   },
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "c77dff",
+    "alpha": 0.8
+   }
+  ]
+ }
+}

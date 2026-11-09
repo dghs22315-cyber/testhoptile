@@ -1,0 +1,24 @@
+{
+ "type": "ForceProjector",
+ "category": "effect",
+ "size": 3,
+ "health": 1800,
+ "research": "vg-ed-shield",
+ "requirements": [
+  "lead/240",
+  "silicon/180",
+  "titanium/120",
+  "cobalt-alloy/80",
+  "magnet/40"
+ ],
+ "radius": 112,
+ "shieldHealth": 3500,
+ "cooldownNormal": 3.2,
+ "cooldownLiquid": 1.5,
+ "cooldownBrokenBase": 0.8,
+ "consumes": {
+  "power": 5
+ },
+ "ambientSound": "shield-hum",
+ "ambientSoundVolume": 0.1
+}

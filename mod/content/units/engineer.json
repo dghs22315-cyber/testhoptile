@@ -1,0 +1,21 @@
+{
+ "type": "flying",
+ "flying": true,
+ "lowAltitude": true,
+ "speed": 2.2,
+ "accel": 0.09,
+ "drag": 0.05,
+ "hitSize": 8,
+ "health": 280,
+ "armor": 1,
+ "rotateSpeed": 8,
+ "buildSpeed": 0.9,
+ "mineTier": 2,
+ "mineSpeed": 5,
+ "itemCapacity": 40,
+ "buildBeamOffset": 3.4,
+ "engineSize": 1.6,
+ "engineOffset": 6,
+ "research": "vg-engineering-bay",
+ "weapons": []
+}

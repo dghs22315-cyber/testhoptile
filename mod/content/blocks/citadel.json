@@ -1,0 +1,26 @@
+{
+ "type": "ForceProjector",
+ "category": "effect",
+ "size": 4,
+ "health": 3600,
+ "research": "vg-pulse-shield",
+ "requirements": [
+  "lead/600",
+  "silicon/450",
+  "titanium/300",
+  "cobalt-alloy/200",
+  "magnet/120",
+  "iridium/120",
+  "superconductor/150"
+ ],
+ "radius": 144,
+ "shieldHealth": 9000,
+ "cooldownNormal": 5.5,
+ "cooldownLiquid": 1.6,
+ "cooldownBrokenBase": 0.9,
+ "consumes": {
+  "power": 12
+ },
+ "ambientSound": "citadel-hum",
+ "ambientSoundVolume": 0.12
+}

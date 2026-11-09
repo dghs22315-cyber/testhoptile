@@ -1,0 +1,92 @@
+{
+ "type": "ItemTurret",
+ "category": "turret",
+ "size": 2,
+ "health": 800,
+ "armor": 2,
+ "research": "duo",
+ "requirements": [
+  "copper/70",
+  "lead/40",
+  "graphite/25",
+  "steel/20"
+ ],
+ "range": 200,
+ "reload": 7,
+ "rotateSpeed": 10,
+ "inaccuracy": 2,
+ "recoil": 1,
+ "shootY": 7,
+ "heatColor": "ffb050",
+ "cooldownTime": 18,
+ "shootSound": "rivet-shoot",
+ "ammoUseEffect": "casing1",
+ "maxAmmo": 60,
+ "shoot": {
+  "type": "ShootAlternate",
+  "barrels": 2,
+  "spread": 4.5
+ },
+ "ammoTypes": {
+  "copper": {
+   "type": "BasicBulletType",
+   "speed": 6,
+   "damage": 11,
+   "lifetime": 34,
+   "width": 6,
+   "height": 10,
+   "frontColor": "fff0c8",
+   "backColor": "d99d73",
+   "hitEffect": "hitBulletSmall",
+   "despawnEffect": "hitBulletSmall",
+   "shootEffect": "shootSmall",
+   "smokeEffect": "shootSmallSmoke",
+   "ammoMultiplier": 2
+  },
+  "graphite": {
+   "type": "BasicBulletType",
+   "speed": 6,
+   "damage": 16,
+   "lifetime": 34,
+   "width": 6,
+   "height": 10,
+   "frontColor": "e6e6e6",
+   "backColor": "8a8a8a",
+   "hitEffect": "hitBulletSmall",
+   "despawnEffect": "hitBulletSmall",
+   "shootEffect": "shootSmall",
+   "smokeEffect": "shootSmallSmoke"
+  },
+  "steel": {
+   "type": "BasicBulletType",
+   "speed": 6,
+   "damage": 19,
+   "lifetime": 34,
+   "width": 6,
+   "height": 10,
+   "frontColor": "eef3f8",
+   "backColor": "98a3b0",
+   "hitEffect": "hitBulletSmall",
+   "despawnEffect": "hitBulletSmall",
+   "shootEffect": "shootSmall",
+   "smokeEffect": "shootSmallSmoke",
+   "pierceArmor": true
+  },
+  "silicon": {
+   "type": "BasicBulletType",
+   "speed": 6,
+   "damage": 13,
+   "lifetime": 34,
+   "width": 6,
+   "height": 10,
+   "frontColor": "fff4d6",
+   "backColor": "ffb347",
+   "hitEffect": "hitBulletSmall",
+   "despawnEffect": "hitBulletSmall",
+   "shootEffect": "shootSmall",
+   "smokeEffect": "shootSmallSmoke",
+   "homingPower": 0.06,
+   "reloadMultiplier": 1.3
+  }
+ }
+}

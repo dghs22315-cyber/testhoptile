@@ -1,0 +1,83 @@
+{
+ "type": "ItemTurret",
+ "category": "turret",
+ "size": 4,
+ "health": 6800,
+ "armor": 10,
+ "research": "vg-lash",
+ "requirements": [
+  "copper/800",
+  "graphite/400",
+  "silicon/450",
+  "titanium/400",
+  "plastanium/150",
+  "steel/400",
+  "cobalt-alloy/250",
+  "iridium/200",
+  "superconductor/250"
+ ],
+ "targetAir": true,
+ "range": 384,
+ "reload": 150,
+ "rotateSpeed": 2.2,
+ "recoil": 0,
+ "shake": 5,
+ "shootY": 30.0,
+ "shootSound": "bastion-shoot",
+ "heatColor": "7fd4ff",
+ "cooldownTime": 110,
+ "maxAmmo": 20,
+ "minWarmup": 0.9,
+ "shootWarmupSpeed": 0.06,
+ "consumes": {
+  "power": 9,
+  "coolant": {
+   "amount": 0.4
+  }
+ },
+ "drawer": {
+  "type": "DrawTurret",
+  "parts": [
+   {
+    "type": "RegionPart",
+    "suffix": "-barrel",
+    "progress": "recoil",
+    "moveY": -5,
+    "heatColor": "7fd4ff"
+   }
+  ]
+ },
+ "ammoTypes": {
+  "iridium": {
+   "type": "RailBulletType",
+   "length": 384,
+   "pointEffect": "railTrail",
+   "pointEffectSpace": 20,
+   "pierceEffect": "railHit",
+   "endEffect": "railHit",
+   "hitEffect": "hitBulletBig",
+   "shootEffect": "railShoot",
+   "smokeEffect": "shootBigSmoke",
+   "damage": 1400,
+   "pierceDamageFactor": 0.5,
+   "hitColor": "c9e6ff",
+   "ammoMultiplier": 1
+  },
+  "tungsten-core": {
+   "type": "RailBulletType",
+   "length": 384,
+   "pointEffect": "railTrail",
+   "pointEffectSpace": 20,
+   "pierceEffect": "railHit",
+   "endEffect": "railHit",
+   "hitEffect": "hitBulletBig",
+   "shootEffect": "railShoot",
+   "smokeEffect": "shootBigSmoke",
+   "damage": 900,
+   "pierceDamageFactor": 0.35,
+   "hitColor": "e6e9ef",
+   "pierceArmor": true,
+   "ammoMultiplier": 2
+  }
+ }
+}

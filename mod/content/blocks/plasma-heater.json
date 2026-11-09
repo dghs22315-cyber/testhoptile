@@ -1,0 +1,39 @@
+{
+ "type": "HeatProducer",
+ "category": "crafting",
+ "size": 3,
+ "health": 1100,
+ "research": "vg-heater",
+ "rotate": true,
+ "requirements": [
+  "copper/250",
+  "lead/180",
+  "silicon/150",
+  "titanium/120",
+  "cobalt-alloy/80",
+  "magnet/60"
+ ],
+ "heatOutput": 20,
+ "craftTime": 150,
+ "consumes": {
+  "items": {
+   "items": [
+    "tritium-ice/1"
+   ]
+  },
+  "power": 4
+ },
+ "ambientSound": "plasma-loop",
+ "ambientSoundVolume": 0.1,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawHeatOutput"
+   }
+  ]
+ }
+}

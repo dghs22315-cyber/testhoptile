@@ -1,0 +1,49 @@
+{
+ "type": "HeatCrafter",
+ "category": "crafting",
+ "size": 3,
+ "health": 1400,
+ "research": "vg-tungsten-forge",
+ "requirements": [
+  "copper/300",
+  "lead/200",
+  "silicon/200",
+  "titanium/150",
+  "plastanium/80",
+  "cobalt-alloy/120",
+  "tungsten-core/60"
+ ],
+ "outputItem": "iridium/1",
+ "craftTime": 120,
+ "heatRequirement": 15,
+ "maxEfficiency": 2,
+ "consumes": {
+  "items": {
+   "items": [
+    "iridite/2",
+    "cobalt-alloy/1",
+    "plastanium/1"
+   ]
+  },
+  "power": 4
+ },
+ "craftEffect": "smeltsmoke",
+ "ambientSound": "forge-loop",
+ "ambientSoundVolume": 0.14,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawHeatInput"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "dfe6ff",
+    "alpha": 0.9
+   }
+  ]
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "type": "Separator",
+ "category": "crafting",
+ "size": 2,
+ "health": 320,
+ "research": "melter",
+ "requirements": [
+  "copper/70",
+  "lead/50",
+  "graphite/30"
+ ],
+ "results": [
+  "ferrolite/5",
+  "saltpeter/4"
+ ],
+ "craftTime": 40,
+ "consumes": {
+  "power": 1.1,
+  "liquid": {
+   "liquid": "slag",
+   "amount": 0.07
+  }
+ },
+ "ambientSound": "separator-loop",
+ "ambientSoundVolume": 0.1,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawRegion",
+    "suffix": "-bottom"
+   },
+   {
+    "type": "DrawLiquidTile",
+    "drawLiquid": "slag"
+   },
+   {
+    "type": "DrawRegion",
+    "suffix": "-spinner",
+    "spinSprite": true,
+    "rotateSpeed": 2.5
+   },
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "6ab8ff",
+    "alpha": 0.75
+   }
+  ]
+ }
+}

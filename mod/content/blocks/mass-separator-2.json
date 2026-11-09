@@ -1,0 +1,59 @@
+{
+ "type": "Separator",
+ "category": "crafting",
+ "size": 3,
+ "health": 700,
+ "research": "vg-mass-separator",
+ "requirements": [
+  "copper/160",
+  "lead/120",
+  "graphite/80",
+  "titanium/60",
+  "steel/60"
+ ],
+ "results": [
+  "bauxite/4",
+  "cobaltite/4",
+  "wolframite/3",
+  "neodymite/2",
+  "iridite/1",
+  "tritium-ice/1"
+ ],
+ "craftTime": 32,
+ "consumes": {
+  "power": 2.2,
+  "liquid": {
+   "liquid": "slag",
+   "amount": 0.1
+  }
+ },
+ "ambientSound": "separator-loop",
+ "ambientSoundVolume": 0.12,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawRegion",
+    "suffix": "-bottom"
+   },
+   {
+    "type": "DrawLiquidTile",
+    "drawLiquid": "slag"
+   },
+   {
+    "type": "DrawRegion",
+    "suffix": "-spinner",
+    "spinSprite": true,
+    "rotateSpeed": 3.2
+   },
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "6ab8ff",
+    "alpha": 0.75
+   }
+  ]
+ }
+}

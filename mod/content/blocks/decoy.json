@@ -1,0 +1,15 @@
+{
+ "type": "Wall",
+ "category": "defense",
+ "size": 2,
+ "health": 4000,
+ "armor": 8,
+ "priority": 3,
+ "research": "vg-steel-wall-large",
+ "requirements": [
+  "steel/50",
+  "lead/40",
+  "aluminum/30",
+  "silicon/20"
+ ]
+}

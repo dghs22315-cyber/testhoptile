@@ -1,0 +1,24 @@
+{
+ "type": "Radar",
+ "category": "effect",
+ "size": 3,
+ "health": 900,
+ "research": "vg-spotter-beacon",
+ "buildVisibility": "shown",
+ "requirements": [
+  "copper/120",
+  "lead/90",
+  "silicon/80",
+  "aluminum/60",
+  "magnet/30"
+ ],
+ "fogRadius": 60,
+ "discoveryTime": 480,
+ "rotateSpeed": 1.2,
+ "glowColor": "ff3355",
+ "consumes": {
+  "power": 1.2
+ },
+ "ambientSound": "radar-loop",
+ "ambientSoundVolume": 0.06
+}

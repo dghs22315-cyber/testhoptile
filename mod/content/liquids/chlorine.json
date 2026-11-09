@@ -1,0 +1,12 @@
+{
+ "color": "74d45a",
+ "gasColor": "a8e88f",
+ "barColor": "74d45a",
+ "gas": true,
+ "temperature": 0.4,
+ "viscosity": 0.2,
+ "flammability": 0,
+ "effect": "corroded",
+ "coolant": false,
+ "research": "vg-aluminum"
+}

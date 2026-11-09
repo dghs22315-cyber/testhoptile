@@ -1,0 +1,23 @@
+{
+ "type": "ForceProjector",
+ "category": "effect",
+ "size": 2,
+ "health": 900,
+ "research": "vg-shield-emitter",
+ "requirements": [
+  "lead/120",
+  "silicon/90",
+  "steel/60",
+  "aluminum/40"
+ ],
+ "radius": 72,
+ "shieldHealth": 1000,
+ "cooldownNormal": 2.0,
+ "cooldownLiquid": 1.4,
+ "cooldownBrokenBase": 1.2,
+ "consumes": {
+  "power": 2.5
+ },
+ "ambientSound": "shield-hum",
+ "ambientSoundVolume": 0.08
+}

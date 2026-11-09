@@ -1,0 +1,25 @@
+{
+ "type": "Drill",
+ "category": "production",
+ "size": 3,
+ "health": 760,
+ "research": "laser-drill",
+ "requirements": [
+  "copper/90",
+  "graphite/60",
+  "silicon/50",
+  "titanium/50",
+  "aluminum/40"
+ ],
+ "tier": 4,
+ "drillTime": 300,
+ "rotateSpeed": 4,
+ "drillEffect": "mineHuge",
+ "updateEffect": "pulverizeMedium",
+ "updateEffectChance": 0.03,
+ "consumes": {
+  "power": 2.6
+ },
+ "ambientSound": "drill-loop",
+ "ambientSoundVolume": 0.1
+}

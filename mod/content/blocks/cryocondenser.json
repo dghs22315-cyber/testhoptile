@@ -1,0 +1,50 @@
+{
+ "type": "GenericCrafter",
+ "category": "crafting",
+ "size": 2,
+ "health": 480,
+ "research": "vg-electrolyzer",
+ "requirements": [
+  "copper/120",
+  "lead/100",
+  "silicon/80",
+  "titanium/60",
+  "aluminum/60"
+ ],
+ "craftTime": 60,
+ "outputLiquid": {
+  "liquid": "liquid-nitrogen",
+  "amount": 0.12
+ },
+ "liquidCapacity": 40,
+ "consumes": {
+  "liquid": {
+   "liquid": "water",
+   "amount": 0.2
+  },
+  "power": 2.5
+ },
+ "ambientSound": "cryo-loop",
+ "ambientSoundVolume": 0.08,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawRegion",
+    "suffix": "-bottom"
+   },
+   {
+    "type": "DrawLiquidTile",
+    "drawLiquid": "liquid-nitrogen"
+   },
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "9fe6ff",
+    "alpha": 0.8
+   }
+  ]
+ }
+}

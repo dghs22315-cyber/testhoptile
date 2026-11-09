@@ -1,0 +1,80 @@
+{
+ "type": "ItemTurret",
+ "category": "turret",
+ "size": 2,
+ "health": 760,
+ "armor": 2,
+ "research": "scatter",
+ "requirements": [
+  "copper/80",
+  "lead/50",
+  "graphite/30",
+  "steel/25"
+ ],
+ "targetGround": false,
+ "range": 240,
+ "reload": 18,
+ "rotateSpeed": 12,
+ "inaccuracy": 6,
+ "recoil": 1,
+ "shootY": 7,
+ "heatColor": "ffb050",
+ "cooldownTime": 20,
+ "shootSound": "sparrow-shoot",
+ "maxAmmo": 40,
+ "shoot": {
+  "type": "ShootAlternate",
+  "barrels": 2,
+  "spread": 6
+ },
+ "ammoTypes": {
+  "steel": {
+   "type": "FlakBulletType",
+   "speed": 4.2,
+   "lifetime": 60,
+   "splashDamage": 30,
+   "splashDamageRadius": 22,
+   "explodeRange": 26,
+   "width": 6,
+   "height": 8,
+   "frontColor": "eef3f8",
+   "backColor": "98a3b0",
+   "collidesGround": false,
+   "hitEffect": "flakExplosion",
+   "shootEffect": "shootSmall",
+   "ammoMultiplier": 3
+  },
+  "metaglass": {
+   "type": "FlakBulletType",
+   "speed": 4.2,
+   "lifetime": 60,
+   "splashDamage": 24,
+   "splashDamageRadius": 26,
+   "explodeRange": 26,
+   "width": 6,
+   "height": 8,
+   "frontColor": "ffffff",
+   "backColor": "d8f0f6",
+   "collidesGround": false,
+   "hitEffect": "flakExplosion",
+   "shootEffect": "shootSmall",
+   "ammoMultiplier": 4
+  },
+  "charge": {
+   "type": "FlakBulletType",
+   "speed": 4.2,
+   "lifetime": 60,
+   "splashDamage": 45,
+   "splashDamageRadius": 30,
+   "explodeRange": 26,
+   "width": 6,
+   "height": 8,
+   "frontColor": "fff1b0",
+   "backColor": "c7b35a",
+   "collidesGround": false,
+   "hitEffect": "flakExplosionBig",
+   "shootEffect": "shootSmall",
+   "status": "blasted"
+  }
+ }
+}

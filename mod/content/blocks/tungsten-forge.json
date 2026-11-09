@@ -1,0 +1,46 @@
+{
+ "type": "HeatCrafter",
+ "category": "crafting",
+ "size": 3,
+ "health": 900,
+ "research": "vg-heater",
+ "requirements": [
+  "copper/200",
+  "lead/120",
+  "silicon/90",
+  "titanium/80",
+  "cobalt-alloy/40"
+ ],
+ "outputItem": "tungsten-core/1",
+ "craftTime": 120,
+ "heatRequirement": 6,
+ "maxEfficiency": 2,
+ "consumes": {
+  "items": {
+   "items": [
+    "wolframite/2",
+    "graphite/1"
+   ]
+  },
+  "power": 2.5
+ },
+ "craftEffect": "smeltsmoke",
+ "ambientSound": "forge-loop",
+ "ambientSoundVolume": 0.12,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawHeatInput"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "ff9a3a",
+    "alpha": 0.85
+   }
+  ]
+ }
+}

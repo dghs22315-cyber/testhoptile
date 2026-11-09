@@ -1,0 +1,27 @@
+{
+ "type": "HeatConductor",
+ "category": "crafting",
+ "size": 1,
+ "health": 120,
+ "research": "vg-heater",
+ "requirements": [
+  "copper/10",
+  "graphite/8",
+  "steel/6"
+ ],
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawHeatOutput"
+   },
+   {
+    "type": "DrawHeatInput",
+    "suffix": "-heat"
+   }
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "type": "UnitFactory",
+ "category": "units",
+ "size": 3,
+ "health": 900,
+ "research": "ground-factory",
+ "requirements": [
+  "copper/120",
+  "lead/90",
+  "silicon/60",
+  "steel/40"
+ ],
+ "plans": [
+  {
+   "unit": "vg-engineer",
+   "time": 1500,
+   "requirements": [
+    "silicon/30",
+    "steel/20",
+    "lead/20"
+   ]
+  }
+ ],
+ "consumes": {
+  "power": 1.2
+ },
+ "ambientSound": "bay-loop",
+ "ambientSoundVolume": 0.05
+}

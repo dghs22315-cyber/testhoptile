@@ -1,0 +1,55 @@
+{
+ "type": "GenericCrafter",
+ "category": "crafting",
+ "size": 2,
+ "health": 420,
+ "research": "vg-mass-separator-2",
+ "requirements": [
+  "copper/90",
+  "lead/70",
+  "silicon/50",
+  "steel/40"
+ ],
+ "outputItem": "aluminum/1",
+ "craftTime": 60,
+ "outputLiquid": {
+  "liquid": "chlorine",
+  "amount": 0.1
+ },
+ "ignoreLiquidFullness": true,
+ "liquidCapacity": 30,
+ "consumes": {
+  "items": {
+   "items": [
+    "bauxite/2"
+   ]
+  },
+  "power": 1.6
+ },
+ "craftEffect": "smeltsmoke",
+ "ambientSound": "electrolyzer-loop",
+ "ambientSoundVolume": 0.08,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawRegion",
+    "suffix": "-bottom"
+   },
+   {
+    "type": "DrawLiquidTile",
+    "drawLiquid": "chlorine"
+   },
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "74d45a",
+    "alpha": 0.8,
+    "glowScale": 5,
+    "glowIntensity": 0.3
+   }
+  ]
+ }
+}

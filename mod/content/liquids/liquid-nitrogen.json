@@ -1,0 +1,11 @@
+{
+ "color": "bfe9ff",
+ "barColor": "bfe9ff",
+ "temperature": 0.05,
+ "heatCapacity": 0.9,
+ "viscosity": 0.3,
+ "flammability": 0,
+ "effect": "freezing",
+ "coolant": true,
+ "research": "vg-cryocondenser"
+}

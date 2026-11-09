@@ -1,0 +1,48 @@
+{
+ "type": "GenericCrafter",
+ "category": "crafting",
+ "size": 3,
+ "health": 1200,
+ "research": "vg-cryocondenser",
+ "requirements": [
+  "copper/250",
+  "lead/200",
+  "silicon/250",
+  "titanium/150",
+  "aluminum/120",
+  "magnet/80"
+ ],
+ "outputItem": "superconductor/1",
+ "craftTime": 90,
+ "consumes": {
+  "items": {
+   "items": [
+    "magnet/1",
+    "aluminum/2"
+   ]
+  },
+  "liquid": {
+   "liquid": "liquid-nitrogen",
+   "amount": 0.12
+  },
+  "power": 5
+ },
+ "craftEffect": "smeltsmoke",
+ "ambientSound": "chamber-loop",
+ "ambientSoundVolume": 0.08,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "7fd4ff",
+    "alpha": 0.85,
+    "glowScale": 5,
+    "glowIntensity": 0.3
+   }
+  ]
+ }
+}

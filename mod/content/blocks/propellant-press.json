@@ -1,0 +1,54 @@
+{
+ "type": "GenericCrafter",
+ "category": "crafting",
+ "size": 2,
+ "health": 300,
+ "research": "mass-separator",
+ "requirements": [
+  "copper/60",
+  "lead/45",
+  "graphite/25"
+ ],
+ "outputItem": "charge/2",
+ "craftTime": 50,
+ "craftEffect": "pulverizeMedium",
+ "consumes": {
+  "items": {
+   "items": [
+    "saltpeter/1",
+    "coal/1"
+   ]
+  },
+  "power": 0.5
+ },
+ "ambientSound": "press-loop",
+ "ambientSoundVolume": 0.1,
+ "drawer": {
+  "type": "DrawMulti",
+  "drawers": [
+   {
+    "type": "DrawRegion",
+    "suffix": "-bottom"
+   },
+   {
+    "type": "DrawPistons",
+    "sinMag": 2.2,
+    "sinScl": 5,
+    "lenOffset": 2.5,
+    "sides": 4
+   },
+   {
+    "type": "DrawDefault"
+   },
+   {
+    "type": "DrawRegion",
+    "suffix": "-top"
+   },
+   {
+    "type": "DrawGlowRegion",
+    "color": "ffd060",
+    "alpha": 0.7
+   }
+  ]
+ }
+}
