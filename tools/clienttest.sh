@@ -14,7 +14,7 @@ mkdir -p "$B"
 zip="$B/vanguard-arsenal-$version.zip"
 rm -f "$zip" "$B/vgtest.zip"
 (cd mod && zip -q -r -X "../$zip" .)
-(cd tools/harness && zip -q -r -X "$ROOT/$B/vgtest.zip" .)
+(cd "${VG_HARNESS:-tools/harness}" && zip -q -r -X "$ROOT/$B/vgtest.zip" .)
 
 data=$PWD/$B/client-data
 rm -rf "$data" "$B/shots" && mkdir -p "$data/Mindustry/mods" "$B/shots"
