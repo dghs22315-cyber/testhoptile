@@ -1,10 +1,11 @@
 {
- "type": "Wall",
- "category": "defense",
- "size": 2,
- "health": 2000,
- "research": "steel-wall",
- "requirements": [
-  "steel/24"
- ]
+  "type": "Wall",
+  "category": "defense",
+  "size": 2,
+  "health": 2000,
+  "research": "steel-wall",
+  "requirements": [
+    "steel/24"
+  ],
+  "variants": 2
 }
